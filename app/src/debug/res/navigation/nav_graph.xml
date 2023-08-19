@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/photosFragment"
+        android:name="com.example.practice.presentation.PhotosFragment"
+        android:label="@string/photos_fragment_label" >
+        <action
+            android:id="@+id/action_photosFragment_to_photoDetailsFragment"
+            app:destination="@id/photoDetailsFragment" />
+        <action
+            android:id="@+id/action_photosFragment_to_searchPhotosFragment"
+            app:destination="@id/searchPhotosFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/collectionsFragment"
+        android:name="com.example.practice.presentation.CollectionsFragment"
+        android:label="@string/collections_fragment_label" >
+        <action
+            android:id="@+id/action_collectionsFragment_to_collectionDetailsFragment"
+            app:destination="@id/collectionDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.example.practice.presentation.UserFragment"
+        android:label="@string/user_fragment_label" >
+        <action
+            android:id="@+id/action_userFragment_to_logoutFragment"
+            app:destination="@id/logoutFragment"
+            app:popUpTo="@id/loginFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_photoDetailsFragment"
+            app:destination="@id/photoDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.practice.presentation.LoginFragment"
+        android:label="@string/login_fragment_label"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_photosFragment"
+            app:destination="@+id/photosFragment"
+            app:popUpTo="@+id/splashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.practice.presentation.SplashFragment"
+        android:label=""
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.example.practice.presentation.onboarding.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager">
+        <action
+            android:id="@+id/action_viewPagerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoDetailsFragment"
+        android:name="com.example.practice.presentation.PhotoDetailsFragment"
+        android:label="@string/photo_details_fragment_label"
+        tools:layout="@layout/fragment_photo_details" />
+    <fragment
+        android:id="@+id/searchPhotosFragment"
+        android:name="com.example.practice.presentation.SearchPhotosFragment"
+        android:label="@string/search_fragment_label"
+        tools:layout="@layout/fragment_search_photos" >
+        <action
+            android:id="@+id/action_searchPhotosFragment_to_photoDetailsFragment"
+            app:destination="@id/photoDetailsFragment"
+            app:popUpTo="@id/searchPhotosFragment"
+            />
+        <action
+            android:id="@+id/action_searchPhotosFragment_to_photosFragment"
+            app:destination="@id/photosFragment"
+            app:popUpTo="@id/photosFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/collectionDetailsFragment"
+        android:name="com.example.practice.presentation.CollectionDetailsFragment"
+        android:label="@string/collection_photos"
+        tools:layout="@layout/fragment_collection_details" >
+        <action
+            android:id="@+id/action_collectionDetailsFragment_to_photoDetailsFragment"
+            app:destination="@id/photoDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logoutFragment"
+        android:name="com.example.practice.presentation.LogoutFragment"
+        android:label="fragment_logout"
+        tools:layout="@layout/fragment_logout" >
+
+        <action
+            android:id="@+id/action_logoutFragment_to_splashFragment"
+            app:destination="@id/splashFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
