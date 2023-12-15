@@ -23,4 +23,5 @@ class DatabaseRepositoryImpl @Inject constructor(
     override suspend fun deleteAllPhotosFromDb() {
         db.photosDao().deleteAllPhotos()
     }
+    /
 }
